@@ -415,9 +415,9 @@ section.sec1 .text .page1 button:hover {
 
   .page1 {
     width: 100%;
-    padding: 1.5rem;
+    padding: 1rem;
     justify-content: flex-end;
-    padding-bottom: 3rem;
+    padding-bottom: 6rem;
   }
 
   .page1 h1 {
@@ -447,7 +447,7 @@ section.sec1 .text .page1 button:hover {
 
   .page2 {
     flex-direction: column;
-    padding: 3rem 1.5rem;
+    padding: 5rem 1rem;
     gap: 2rem;
   }
 
@@ -476,7 +476,7 @@ section.sec1 .text .page1 button:hover {
 
   .page3 {
     flex-direction: column-reverse;
-    padding: 3rem 1.5rem;
+    padding: 5rem 1rem;
     gap: 2rem;
   }
 
