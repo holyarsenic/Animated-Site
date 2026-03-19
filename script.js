@@ -57,4 +57,30 @@ function scrollingEffect() {
   });
 }
 
-scrollingEffect();
+function mobileScrolling() {
+  window.addEventListener("touchmove", (dets) => {
+    if (dets.touches[0].clientY < 0) {
+      gsap.to(".scroll", {
+        x: "-=1000",
+        duration: 7,
+        repeat: -1,
+        ease: "none"
+      });
+    } else {
+      gsap.to(".scroll", {
+        x: "+=1000",
+        duration: 7,
+        repeat: -1,
+        ease: "none"
+      });
+    }
+  });
+
+  if (window.matchMedia("(max-width: 600px)").matches) {
+    mobileScrollEffect();
+  } else {
+    scrollingEffect();
+  }
+}
+
+mobileScrolling();
