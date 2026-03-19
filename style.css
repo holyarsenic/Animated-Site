@@ -9,24 +9,8 @@ body {
   height: 100%;
   width: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-section .vid {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-}
-
-section.sec1 {
-  position: relative;
-  height: 450vh;
-}
-
-section .vid video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background-color: #111;
+  color: white;
 }
 
 section nav {
@@ -37,9 +21,9 @@ section nav {
   justify-content: space-between;
   align-items: center;
   color: white;
-  z-index: 10;
+  z-index: 100;
   background-color: rgba(0, 0, 0, 0.40);
-  transition: 1s ease;
+  transition: background 1s ease;
 }
 
 nav.nav-white {
@@ -50,25 +34,61 @@ nav.nav-white {
   margin-left: 2rem;
   text-decoration: none;
   color: white;
+  font-size: 0.9rem;
 }
 
-section.sec1 .text .text1 {
+.resp-nav {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.resp-nav span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+
+section.sec1 {
+  position: relative;
+  height: 400vh;
+  margin-bottom: 4rem;
+  background: #111;
+}
+
+section .vid {
+  position: sticky;
+  top: 0;
   height: 100vh;
+  width: 100%;
+}
+
+section .vid video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .text {
   width: 100%;
-  background-color: rgb(39, 38, 38, 0.32);
-  color: rgb(221, 219, 219, 0.8);
+  background-color: rgba(39, 38, 38, 0.32);
+  color: rgba(221, 219, 219, 0.8);
   position: absolute;
   top: 0;
   z-index: 2;
   height: 100%;
 }
 
+section.sec1 .text .text1 {
+  height: 100vh;
+}
+
+
 .page1 {
   width: 50%;
-  font-size: 2rem;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
@@ -85,7 +105,8 @@ section.sec1 .text .text1 {
   margin-top: 1rem;
   line-height: 1.6;
   opacity: 0.85;
-  border-top: 2px solid rgb(221, 219, 219, 0.8);
+  border-top: 2px solid rgba(221, 219, 219, 0.8);
+  padding-top: 1rem;
 }
 
 .cta {
@@ -100,6 +121,20 @@ section.sec1 .text .text1 {
   opacity: 0.6;
 }
 
+section.sec1 .text .page1 button {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.75rem;
+  color: white;
+  background-color: rgba(74, 72, 72, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all ease 0.6s;
+}
+
+section.sec1 .text .page1 button:hover {
+  background-color: rgba(104, 102, 102, 0.15);
+}
 
 .page2 {
   display: flex;
@@ -108,7 +143,6 @@ section.sec1 .text .text1 {
   padding: 6rem 5rem;
   backdrop-filter: blur(3px);
 }
-
 
 .left {
   display: flex;
@@ -134,8 +168,12 @@ section.sec1 .text .text1 {
   font-size: 1.2rem;
   line-height: 1.7;
   opacity: 0.85;
+  padding: 2rem;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.40);
+  backdrop-filter: blur(50px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 
 .page2 ul {
   margin-top: 1.5rem;
@@ -144,14 +182,6 @@ section.sec1 .text .text1 {
 
 .page2 ul li {
   margin-bottom: 0.8rem;
-}
-
-.right {
-  padding: 2rem;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.40);
-  backdrop-filter: blur(50px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .page3 {
@@ -168,6 +198,12 @@ section.sec1 .text .text1 {
   margin-top: 2rem;
 }
 
+.stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .stats h2 {
   font-size: 2rem;
 }
@@ -177,8 +213,9 @@ section.sec1 .text .text1 {
   opacity: 0.6;
 }
 
-
 .page4 {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -188,41 +225,46 @@ section.sec1 .text .text1 {
 
 .final-btn {
   margin-top: 2rem;
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 2rem;
   border: 1px solid white;
   background: transparent;
   color: white;
   cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s, color 0.3s;
 }
 
-
-section.sec1 .text .page1 button {
-  width: 20%;
-  padding: 0.6rem 0.7rem;
-  font-size: 0.7rem;
-  color: white;
-  background-color: rgb(74, 72, 72, 0.32);
-  border: 2px solid rgb(37, 36, 36);
+.final-btn:hover {
+  background: white;
+  color: #111;
 }
 
 .page5 {
   width: 100%;
   background-color: #111;
+  overflow: hidden;
 }
 
 .page5 .scroll-effect {
-  padding: 2rem;
+  border: 1px solid white;
+  padding: 1.5rem 0;
   display: flex;
   align-items: center;
   gap: 2rem;
   background-color: #111;
-  overflow: hidden;
-  width: 100%;
+  width: max-content;
 }
 
 .scroll {
   flex-shrink: 0;
   white-space: nowrap;
+  color: white;
+}
+
+.scroll h1 {
+  font-size: 3rem;
+  letter-spacing: 4px;
+  opacity: 0.9;
 }
 
 .sec2 {
@@ -269,7 +311,8 @@ section.sec1 .text .page1 button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  display: block;
+  transition: all 0.6s ease;
 }
 
 .visit-item:hover img {
@@ -298,4 +341,233 @@ section.sec1 .text .page1 button {
   font-size: 0.9rem;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+
+@media (max-width: 920px) {
+  section nav {
+    padding: 1.5rem 2rem;
+  }
+
+  .page1 {
+    width: 70%;
+    padding: 3rem;
+  }
+
+  .page1 h1 {
+    font-size: 3.5rem;
+  }
+
+  .page2,
+  .page3 {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 2rem;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .page4 {
+    padding: 4rem 2rem;
+  }
+
+  .visits {
+    columns: 2;
+  }
+
+  .gallery-header h2 {
+    font-size: 3rem;
+  }
+
+  .sec2 {
+    padding: 4rem 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+  section nav {
+    padding: 1.2rem 1.5rem;
+    position: fixed;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+    font-size: 1rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .resp-nav {
+    display: flex;
+  }
+
+  .page1 {
+    width: 100%;
+    padding: 1.5rem;
+    justify-content: flex-end;
+    padding-bottom: 3rem;
+  }
+
+  .page1 h1 {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+  }
+
+  .page1 p {
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+  }
+
+  .cta {
+    margin-top: 1.2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cta span {
+    font-size: 0.7rem;
+  }
+
+  section.sec1 .text .page1 button {
+    padding: 0.5rem 1rem;
+    font-size: 0.65rem;
+  }
+
+  .page2 {
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .left h1 {
+    font-size: 2.5rem;
+  }
+
+  .left h3 {
+    font-size: 0.75rem;
+  }
+
+  .right {
+    width: 100%;
+    font-size: 0.85rem;
+    padding: 1.2rem;
+  }
+
+  .page2 ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .page3 {
+    flex-direction: column-reverse;
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .page3 .left {
+    width: 100%;
+  }
+
+  .page3 .left h1 {
+    font-size: 2.5rem;
+  }
+
+  .page3 .left p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    opacity: 0.8;
+  }
+
+  .stats {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+    margin-top: 0;
+  }
+
+  .stats div {
+    align-items: center;
+    flex: 1;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 0.5rem;
+  }
+
+  .stats div:last-child {
+    border-right: none;
+  }
+
+  .stats h2 {
+    font-size: 1.4rem;
+  }
+
+  .stats span {
+    font-size: 0.6rem;
+    text-align: center;
+  }
+
+  .page4 {
+    padding: 3rem 1.5rem;
+  }
+
+  .page4 h1 {
+    font-size: 2rem;
+  }
+
+  .page4 p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-top: 0.8rem;
+  }
+
+  .page5 {
+    display: block;
+  }
+
+  .scroll h1 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+
+  .sec2 {
+    padding: 4rem 1.2rem;
+  }
+
+  .gallery-header h2 {
+    font-size: 2rem;
+  }
+
+  .gallery-header p {
+    font-size: 0.75rem;
+  }
+
+  .visits {
+    columns: 2;
+    column-gap: 0.5rem;
+  }
+
+  .visit-item {
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+  }
+
+  .overlay span {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
 }

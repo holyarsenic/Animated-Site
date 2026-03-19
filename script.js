@@ -39,19 +39,19 @@ function scrollingEffect() {
   window.addEventListener("wheel", (dets) => {
     if (dets.deltaY > 0) {
       gsap.to(".scroll", {
-        x: "+=1000",
-        duration: 4,
+        x: "-=1000",
+        duration: 7,
         repeat: -1,
-        ease: "none",
-        overwrite: "auto"
+        scrub: 2,
+        ease: "none"
       });
     } else {
       gsap.to(".scroll", {
-        x: "-=1000",
-        duration: 4,
+        x: "+=1000",
+        duration: 7,
         repeat: -1,
-        ease: "none",
-        overwrite: "auto"
+        scrub: 2,
+        ease: "none"
       });
     }
   });
