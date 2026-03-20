@@ -417,7 +417,7 @@ section.sec1 .text .page1 button:hover {
     width: 100%;
     padding: 1rem;
     justify-content: flex-end;
-    padding-bottom: 6rem;
+    padding-bottom: 8rem;
   }
 
   .page1 h1 {
@@ -447,7 +447,7 @@ section.sec1 .text .page1 button:hover {
 
   .page2 {
     flex-direction: column;
-    padding: 5rem 1rem;
+    padding: 7rem 1rem;
     gap: 2rem;
   }
 
@@ -476,7 +476,7 @@ section.sec1 .text .page1 button:hover {
 
   .page3 {
     flex-direction: column-reverse;
-    padding: 5rem 1rem;
+    padding: 8rem 1rem;
     gap: 2rem;
   }
 
@@ -557,7 +557,7 @@ section.sec1 .text .page1 button:hover {
   }
 
   .visits {
-    columns: 2;
+    columns: 1;
     column-gap: 0.5rem;
   }
 
