@@ -1,11 +1,12 @@
-// Initialize Lenis
+gsap.registerPlugin(ScrollTrigger);
+
+
 const lenis = new Lenis(
   {
     duration: 1.2,
     smooth: true
   }
 );
-// Use requestAnimationFrame to continuously update the scroll
 function raf(time) {
   lenis.raf(time);
   requestAnimationFrame(raf);
@@ -16,7 +17,6 @@ requestAnimationFrame(raf);
 
 
 function navbar() {
-  gsap.registerPlugin(ScrollTrigger);
 
   ScrollTrigger.create({
     trigger: ".page4",
@@ -77,10 +77,21 @@ function mobileScrolling() {
   });
 
   if (window.matchMedia("(max-width: 600px)").matches) {
-    mobileScrollEffect();
+    mobileScrolling();
   } else {
     scrollingEffect();
   }
 }
 
 mobileScrolling();
+
+const respnav = document.querySelectorAll('.resp-nav span');
+const ntg = document.querySelector('.resp-nav .ntg');
+
+respnav.forEach((el) => {
+  el.addEventListener("click", () => {
+    e.stopPropagation();
+    respnav.style.display = "none";
+
+  });
+});
