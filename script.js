@@ -56,39 +56,7 @@ function scrollingEffect() {
   });
 }
 
-function mobileScrolling() {
-  let lastTouchY = 0;
-
-  window.addEventListener('touchstart', (e) => {
-    lastTouchY = e.touches[0].clientY;
-  });
-
-  window.addEventListener("touchmove", (dets) => {
-    const currentY = dets.touches[0].clientY;
-    if (currentY < lastTouchY) {
-      gsap.to(".scroll-effect", {
-        x: "-=20",
-        ease: "none",
-        duration: 1,
-        overwrite: true
-      });
-    } else {
-      gsap.to(".scroll-effect", {
-        x: "+=20",
-        ease: "none",
-        duration: 1,
-        overwrite: true
-      });
-    }
-    lastTouchY = currentY;
-  });
-}
-
-if (window.matchMedia("(max-width: 600px)").matches) {
-  mobileScrolling();
-} else {
-  scrollingEffect();
-}
+scrollingEffect();
 
 const ntg = document.querySelector('.resp-nav .ntg');
 const respnav = document.querySelector('.sec1 .resp-nav');
