@@ -34,46 +34,53 @@ function navbar() {
 
 navbar();
 
-
 function scrollingEffect() {
   window.addEventListener("wheel", (dets) => {
     if (dets.deltaY > 0) {
       gsap.to(".scroll", {
         x: "-=1000",
-        duration: 7,
+        ease: "none",
+        duration: 8,
         repeat: -1,
-        scrub: 2,
-        ease: "none"
+        overwrite: true
       });
     } else {
       gsap.to(".scroll", {
         x: "+=1000",
-        duration: 7,
+        ease: "none",
+        duration: 8,
         repeat: -1,
-        scrub: 2,
-        ease: "none"
+        overwrite: true
       });
     }
   });
 }
 
 function mobileScrolling() {
+  let lastTouchY = 0;
+
+  window.addEventListener('touchstart', (e) => {
+    lastTouchY = e.touches[0].clientY;
+  });
+
   window.addEventListener("touchmove", (dets) => {
-    if (dets.touches[0].clientY < 0) {
-      gsap.to(".scroll", {
-        x: "-=1000",
-        duration: 7,
-        repeat: -1,
-        ease: "none"
+    const currentY = dets.touches[0].clientY;
+    if (currentY < lastTouchY) {
+      gsap.to(".scroll-effect", {
+        x: "-=20",
+        ease: "none",
+        duration: 1,
+        overwrite: true
       });
     } else {
-      gsap.to(".scroll", {
-        x: "+=1000",
-        duration: 7,
-        repeat: -1,
-        ease: "none"
+      gsap.to(".scroll-effect", {
+        x: "+=20",
+        ease: "none",
+        duration: 1,
+        overwrite: true
       });
     }
+    lastTouchY = currentY;
   });
 }
 
@@ -122,4 +129,4 @@ respnav.addEventListener('click', () => {
 
     isOpen = false;
   }
-});
+}); 
