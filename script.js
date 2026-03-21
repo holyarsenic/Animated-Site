@@ -35,23 +35,29 @@ function navbar() {
 navbar();
 
 function scrollingEffect() {
-  window.addEventListener("wheel", (dets) => {
-    if (dets.deltaY > 0) {
-      gsap.to(".scroll", {
-        x: "-=1000",
-        ease: "none",
-        duration: 8,
-        repeat: -1,
-        overwrite: true
-      });
-    } else {
-      gsap.to(".scroll", {
-        x: "+=1000",
-        ease: "none",
-        duration: 8,
-        repeat: -1,
-        overwrite: true
-      });
+  const marque = gsap
+    .to(".scroll-effect", {
+      xPercent: -100,
+      ease: "none",
+      repeat: -1,
+      duration: 14,
+    })
+    .totalProgress(0.5);
+
+  const arrow = gsap.to(".scroll img", {
+    transform: 'rotateY(180deg)',
+  });
+
+  let scrollDown = true;
+  window.addEventListener("wheel", (e) => {
+    if (e.deltaY > 0 && !scrollDown) {
+      scrollDown = true;
+      marque.play();
+      arrow.play();
+    } else if (e.deltaY < 0 && scrollDown) {
+      scrollDown = false;
+      marque.reverse();
+      arrow.reverse();
     }
   });
 }

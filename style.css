@@ -23,6 +23,7 @@ section nav {
   color: white;
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.40);
+  backdrop-filter: blur(4px);
   transition: background-color 1s ease;
 }
 
@@ -132,7 +133,7 @@ section .vid video {
 
 .text {
   width: 100%;
-  background-color: rgba(39, 38, 38, 0.32);
+  background-color: rgba(17, 17, 17, 0.3);
   color: rgba(221, 219, 219, 0.8);
   position: absolute;
   top: 0;
@@ -306,6 +307,7 @@ section.sec1 .text .page1 button:hover {
 
 .marquee-track {
   display: flex;
+  flex-direction: row;
   position: relative;
   width: max-content;
 }
@@ -322,14 +324,25 @@ section.sec1 .text .page1 button:hover {
   will-change: transform;
 }
 
+.marquee-track .scroll-effect .scroll img {
+  height: 7vh;
+  width: 100%;
+  border-radius: 20px;
+}
+
 .scroll {
   flex-shrink: 0;
   white-space: nowrap;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .scroll h1 {
-  font-size: 3rem;
+  font-size: 2rem;
+  font-weight: 300;
   letter-spacing: 4px;
   opacity: 0.9;
 }
@@ -341,18 +354,20 @@ section.sec1 .text .page1 button:hover {
 }
 
 .gallery-header {
-  text-align: center;
-  margin-bottom: 4rem;
-  color: white;
+  text-align: left;
+  margin-bottom: 5rem;
+  width: 30vw;
 }
 
 .gallery-header h2 {
-  font-size: 4rem;
+  font-size: 2rem;
+  color: #ff8c00;
   letter-spacing: 3px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .gallery-header p {
+  border-top: 1px solid white;
   font-size: 1rem;
   opacity: 0.5;
   margin-top: 0.5rem;
