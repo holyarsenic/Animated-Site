@@ -356,9 +356,11 @@ section.sec1 .text .page1 button:hover {
 
 .sec2-header {
   position: absolute;
-  top: 20%;
-  left: 5%;
+  top: 12%;
+  left: 2%;
   z-index: 2;
+  background-color: rgb(17, 17, 17, 0.2);
+  padding: 1rem;
 }
 
 .sec2-header h2 {
@@ -493,6 +495,29 @@ section.sec1 .text .page1 button:hover {
 .card-btn:hover {
   background: #ff8c00;
   color: #111;
+}
+
+.sec2-footer {
+  position: fixed;
+  bottom: 3%;
+  right: 2%;
+}
+
+.sec2-footer h2 {
+  font-size: 2rem;
+  color: #ff8c00;
+  letter-spacing: 3px;
+  font-weight: 600;
+  text-align: end;
+}
+
+.sec2-footer p {
+  border-top: 1px solid white;
+  font-size: 1rem;
+  opacity: 0.5;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .sec3 {
@@ -685,6 +710,10 @@ section.sec1 .text .page1 button:hover {
 
   .card-img {
     height: 160px;
+  }
+
+  .sec2-footer {
+    display: none;
   }
 }
 
