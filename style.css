@@ -613,10 +613,79 @@ section.sec1 .text .page1 button:hover {
     columns: 2;
   }
 
-  .gallery-header h2 {
-    font-size: 3rem;
+
+  .gallery-header {
+    display: block;
+    width: 70%;
   }
 
+  .gallery-header h2 {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
+  .gallery-header p {
+    font-size: 0.75rem;
+    width: 100%;
+  }
+
+  .sec2 {
+    height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .sec2-header {
+    position: sticky;
+    width: 70%;
+    top: 11%;
+  }
+
+  .sec2-header h2 {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
+  .sec2-header p {
+    font-size: 0.75rem;
+    width: 100%;
+  }
+
+  .sec2-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sec2-track {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    scrollbar-width: none;
+  }
+
+  .sec2-panel {
+    scroll-snap-align: start;
+  }
+
+  .panel-card .card-info .card-tag {
+    font-size: 0.7rem;
+  }
+
+  .panel-card .card-info h2 {
+    font-size: 1rem;
+  }
+
+  .sec2-panel {
+    padding: 1rem 8rem;
+  }
+
+  .panel-card {
+    width: 30vw;
+    height: 60vh;
+  }
+
+  .card-img {
+    height: 160px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -848,10 +917,6 @@ section.sec1 .text .page1 button:hover {
     scroll-snap-align: start;
   }
 
-  .panel-card .card-info p {
-    display: none;
-  }
-
   .panel-card .card-info .card-tag {
     font-size: 0.7rem;
   }
@@ -866,11 +931,11 @@ section.sec1 .text .page1 button:hover {
     justify-content: space-between;
     align-items: center;
     margin-top: 1rem;
-    padding: 1rem 1.5rem;
+    padding: 1rem 2rem;
   }
 
   .panel-card {
-    width: 85vw;
+    width: 80vw;
     height: 60vh;
   }
 
