@@ -390,9 +390,18 @@ section.sec1 .text .page1 button:hover {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10rem;
   margin-top: 1rem;
-  padding: 2rem 15rem;
+}
+
+.sec2-panel:nth-child(1) {
+  padding-left: 35rem;
+}
+
+.sec2-panel:nth-last-child(1) {
+  padding-left: 0;
+  justify-content: left;
 }
 
 .panel-card {
